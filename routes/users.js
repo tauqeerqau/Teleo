@@ -68,7 +68,6 @@ addUser.post(function (req, res) {
 login.post(function(req,res){
 
   var email = req.body.Email;
-  var password = req.body.UserPassword;
   User.findOne({ Email: email }, function(err, user) {
       if (err) {
         response.message = messages.getFailureMessage();
