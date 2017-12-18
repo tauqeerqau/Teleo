@@ -11,7 +11,12 @@ var UserSchema = new mongoose.Schema({
     ProfileURL:String,
     FullName:String,
     ChannelType:Number,
-    UserRole:Number
+    UserRole:Number,
+    UserLevel:Number,
+    UserGoal:Number,
+    UserHeightInFeet:Number,
+    UserHeightInInches:Number,
+    UserWeightInLbs:Number
 });
 
 // Export the Mongoose model

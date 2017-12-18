@@ -19,4 +19,12 @@ var Messages = function Constructor() {
     {
         return "USER ALREADY EXISTS";
     }
+    Messages.prototype.getDoesNotExistMessage= function()
+    {
+        return "USER DOES NOT EXIST";
+    }
+    Messages.prototype.getInvalidPassword = function()
+    {
+        return "INVALID PASSWORD";
+    }
     module.exports = Messages;  

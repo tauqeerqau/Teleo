@@ -19,4 +19,13 @@ var Codes = function Constructor() {
     {
         return 400;
     }
+
+    Codes.prototype.getInvalidPasswordCode= function()
+    {
+        return 500;
+    }
+    Codes.prototype.getDoesNotExistCode= function()
+    {
+        return 600;
+    }
     module.exports = Codes;  
