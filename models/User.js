@@ -17,7 +17,8 @@ var UserSchema = new mongoose.Schema({
     UserGoal:Number,
     UserHeightInFeet:Number,
     UserHeightInInches:Number,
-    UserWeightInLbs:Number
+    UserWeightInLbs:Number,
+    UserGender:Number
 });
 
 // Export the Mongoose model

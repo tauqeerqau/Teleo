@@ -6,17 +6,17 @@ var UserLevels = function Constructor() {
     
     };
     
-    UserRoles.prototype.Beginner = function()
+    UserLevels.prototype.Beginner = function()
     {
         return 1;
     }
 
-    UserRoles.prototype.Intermediate= function()
+    UserLevels.prototype.Intermediate= function()
     {
         return 2;
     }
 
-    UserRoles.prototype.Advanced= function()
+    UserLevels.prototype.Advanced= function()
     {
         return 3;
     }

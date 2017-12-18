@@ -124,6 +124,7 @@ addUserDetail.post(function(req,res){
         user.UserHeightInFeet = req.body.UserHeightInFeet;
         user.UserHeightInInches = req.body.UserHeightInInches;
         user.UserWeightInLbs = req.body.UserWeightInLbs;
+        user.UserGender = req.body.UserGender;
         user.save(function(err,user){
           response.message = messages.getSuccessMessage();
           response.code = codes.getSuccessCode();
