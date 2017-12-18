@@ -28,7 +28,7 @@ router.get('/', function (req, res, next) {
 
 addUser.post(function (req, res) {
   var user;
-  User.findOne({Email:req.body.Email,UserRole:1},function(err,user){
+  User.findOne({Email:req.body.Email},function(err,user){
     if(user!=undefined)
     {
       response.code=codes.getAlreadyExistCode();
@@ -45,7 +45,7 @@ addUser.post(function (req, res) {
       user.FullName = req.body.FullName;
       user.ChannelType = req.body.ChannelType;
       user.UserRole = req.body.UserRole;
-      user.Password = password.createHash(req.body.Password);
+      user.UserPassword = password.createHash(req.body.Password);
       user.save(function (err, user) {
         if (err) {
           console.log(err);
@@ -68,7 +68,7 @@ addUser.post(function (req, res) {
 login.post(function(req,res){
 
   var email = req.body.Email;
-  var password = req.body.Password;
+  var password = req.body.UserPassword;
   User.findOne({ Email: email }, function(err, user) {
       if (err) {
         response.message = messages.getFailureMessage();
@@ -77,7 +77,7 @@ login.post(function(req,res){
         res.json(response);
       } else {
           if (user != null) {
-              var validate = password.validateHash(user.userPassword, req.body.userPassword);
+              var validate = password.validateHash(user.UserPassword, req.body.UserPassword);
               if (validate == true) {
                   response.message = messages.getSuccessMessage();
                   response.code = codes.getSuccessCode();
