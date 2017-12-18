@@ -12,6 +12,7 @@ var UserSchema = new mongoose.Schema({
     FullName:String,
     ChannelType:Number,
     UserRole:Number,
+    UserPassword:String,
     UserLevel:Number,
     UserGoal:Number,
     UserHeightInFeet:Number,
